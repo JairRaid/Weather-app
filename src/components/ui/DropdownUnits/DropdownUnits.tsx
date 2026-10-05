@@ -1,4 +1,6 @@
 import { Fragment } from "react";
+import unitIcon from "/images/icon-units.svg";
+import dropdownIcon from "/images/icon-dropdown.svg";
 import { Button } from "../button";
 import {
   DropdownMenu,
@@ -107,13 +109,13 @@ const DropdownUnits = ({ units, onChangeUnits }: DropdownUnitsProps) => {
         render={
           <Button>
             <img
-              src="/images/icon-units.svg"
+              src={unitIcon}
               className="dropdown-units__icon dropdown-units__icon--units border-none"
               alt=""
             />
             <span className="dropdown-units__trigger-label">Units</span>
             <img
-              src="/images/icon-dropdown.svg"
+              src={dropdownIcon}
               className="dropdown-units__icon dropdown-units__icon--chevron border-none"
               alt=""
             />
