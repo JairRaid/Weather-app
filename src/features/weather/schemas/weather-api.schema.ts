@@ -1,4 +1,4 @@
-import z, { string } from "zod";
+import z from "zod";
 
 export const weatherApiCurrentSchema = z.object({
   temperature_2m: z.number(),
