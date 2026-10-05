@@ -1,0 +1,19 @@
+@reference "@/base.css";
+
+.weather-details {
+  @apply grid grid-cols-2 gap-16
+  mt-20 
+  md:grid-cols-4 
+  lg:mt-32;
+
+  .weather-details__card {
+    @apply bg-neutral-800 p-20 rounded-12 border border-neutral-600
+    flex flex-col gap-y-24;
+  }
+  .weather-details__label {
+    @apply font-medium text-18 leading-120 text-neutral-200;
+  }
+  .weather-details__value {
+    @apply font-light text-32 leading-100 text-white;
+  }
+}

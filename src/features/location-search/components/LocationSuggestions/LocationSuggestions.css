@@ -1,0 +1,11 @@
+@reference "@/base.css";
+
+.city-list {
+  @apply absolute left-0 bottom-0 translate-y-[calc(100%+.625rem)]
+    w-full p-8 bg-neutral-800 rounded-12;
+}
+.city-item {
+  button {
+    @apply px-8 py-10 rounded-8 hover:bg-neutral-700;
+  }
+}

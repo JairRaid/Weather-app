@@ -1,0 +1,131 @@
+@reference "@/base.css";
+
+.weather-app__container {
+  @apply p-16 md:p-24 lg:py-48 lg:max-w-304 lg:mx-auto;
+}
+
+.weather-app__no-results {
+  @apply font-bold text-28 leading-120 text-white
+  text-center mt-48;
+}
+.weather-dashboard {
+  @apply mt-32 lg:mt-48
+  md:grid md:grid-cols-3 md:gap-32;
+}
+.weather-dashboard__main {
+  @apply col-span-2;
+}
+
+/* Skeleton */
+.skeleton-current,
+.skeleton-details__card,
+.skeleton-daily__card,
+.skeleton-hourly__card {
+  @apply bg-neutral-800 border border-neutral-600;
+}
+
+.skeleton-current {
+  @apply min-h-[15.75rem] rounded-20 flex items-center justify-center;
+}
+
+.skeleton-current__loader {
+  @apply flex flex-wrap items-center justify-center gap-8 text-neutral-200;
+}
+
+.skeleton-current__dot {
+  @apply size-12 rounded-full bg-neutral-200;
+  animation: skeleton-bounce 1s ease-in-out infinite;
+}
+
+.skeleton-current__dot:nth-child(2) {
+  animation-delay: 150ms;
+}
+
+.skeleton-current__dot:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+.skeleton-current__text {
+  @apply basis-full text-center text-16;
+}
+
+.skeleton-details {
+  @apply grid grid-cols-2 gap-16 mt-20 md:grid-cols-4 lg:mt-32;
+}
+
+.skeleton-details__card {
+  @apply min-h-[6.5625rem] rounded-12 p-20 flex flex-col justify-between;
+}
+
+.skeleton-details__label {
+  @apply font-medium text-18 leading-120 text-neutral-200;
+}
+
+.skeleton-details__value {
+  @apply font-light text-32 leading-100 text-white;
+}
+
+.skeleton-daily {
+  @apply mt-32 text-white;
+}
+
+.skeleton-daily__title {
+  @apply font-semibold text-20 leading-120;
+}
+
+.skeleton-daily__list {
+  @apply grid grid-cols-3 gap-16 mt-20 md:grid-cols-7;
+}
+
+.skeleton-daily__card {
+  @apply min-h-[9.0625rem] rounded-12;
+}
+
+.skeleton-hourly {
+  @apply mt-32 rounded-20 bg-neutral-800 px-16 py-20 text-white md:mt-0;
+}
+
+.skeleton-hourly__header {
+  @apply flex items-center justify-between;
+}
+
+.skeleton-hourly__title {
+  @apply font-semibold text-20 leading-120;
+}
+
+.skeleton-hourly__selector {
+  @apply flex h-32 w-[3.75rem] items-center justify-around rounded-8 bg-neutral-700;
+}
+
+.skeleton-hourly__selector span:first-child {
+  @apply h-2 w-8 rounded-full bg-neutral-200;
+}
+
+.skeleton-hourly__selector span:last-child {
+  @apply size-8 rotate-45 border-r-2 border-b-2 border-neutral-200;
+}
+
+.skeleton-hourly__list {
+  @apply mt-4;
+}
+
+.skeleton-hourly__card {
+  @apply mt-12 h-[3.375rem] rounded-8 bg-neutral-700;
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+.skeleton-daily__card {
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-pulse {
+  50% {
+    opacity: 0.65;
+  }
+}
+
+@keyframes skeleton-bounce {
+  50% {
+    transform: translateY(-4px);
+  }
+}

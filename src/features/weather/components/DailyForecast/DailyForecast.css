@@ -1,0 +1,30 @@
+@reference "@/base.css";
+
+.daily-forecast {
+  @apply mt-32 text-white
+  lg:mt-48;
+
+  .daily-forecast__title {
+    @apply font-semibold text-20 leading-120;
+  }
+  .daily-forecast__list {
+    @apply grid grid-cols-3 gap-16
+    mt-20
+    md:grid-cols-7;
+  }
+  .daily-forecast__card {
+    @apply bg-neutral-800 rounded-12 border border-neutral-600
+    flex flex-col items-center gap-y-16
+    px-10 py-16;
+  }
+  .daily-forecast__day {
+    @apply font-medium text-18 leading-120;
+  }
+  .daily-forecast__icon {
+    @apply max-w-15;
+  }
+  .daily-forecast__temperatures {
+    @apply font-medium leading-120
+    self-start flex items-center w-full justify-between;
+  }
+}

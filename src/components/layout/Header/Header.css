@@ -1,0 +1,10 @@
+@reference "@/base.css";
+
+.app-header {
+  @apply flex items-center justify-between;
+
+  .app-header__logo {
+    @apply h-8.5
+    md:h-10.75;
+  }
+}

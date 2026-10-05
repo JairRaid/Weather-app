@@ -1,0 +1,30 @@
+@reference "@/base.css";
+
+.current-weather {
+  @apply rounded-20 overflow-hidden;
+
+  .current-weather__background {
+    @apply bg-[url("/images/bg-today-small.svg")] bg-no-repeat w-full h-full bg-cover bg-center
+    flex flex-col items-center gap-y-16 text-center 
+    px-24 py-40 rounded-20 overflow-hidden
+    md:bg-[url("/images/bg-today-large.svg")] md:py-80 md:flex-row md:justify-between;
+  }
+  .current-weather__location {
+    @apply flex flex-col gap-y-12 leading-120
+    md:text-start;
+  }
+  .current-weather__city {
+    @apply font-bold text-28 text-white;
+  }
+  .current-weather__date {
+    @apply font-medium text-18 text-white/80;
+  }
+
+  .current-weather__temperature {
+    @apply font-semibold italic text-96 leading-100 -tracking-2 text-white
+    flex items-center gap-x-20;
+  }
+  .current-weather__icon {
+    @apply max-w-[7.5rem] h-auto;
+  }
+}

@@ -1,0 +1,15 @@
+@reference "@/base.css";
+
+.day-selector__trigger {
+  @apply font-medium text-16 px-16 py-8 h-[2.3125rem]
+  bg-neutral-600 border-0;
+}
+
+.day-selector__content {
+  @apply font-medium text-16 leading-120 text-white
+  bg-neutral-800 rounded-12 border border-neutral-600;
+}
+
+.day-selector__item {
+  @apply px-8 py-10 rounded-8 hover:bg-neutral-700;
+}

@@ -1,0 +1,23 @@
+@reference "@/base.css";
+
+.dropdown-units__trigger {
+  @apply font-DM font-medium text-14 bg-neutral-800 h-8.5 rounded-6
+  px-10 min-h-8.5 inline-flex gap-x-10 cursor-pointer
+  hover:bg-neutral-700
+  md:min-h-10.75 md:px-16 md:text-16;
+}
+.dropdown-units__content {
+  @apply font-DM font-medium w-53.5 bg-neutral-800 border border-neutral-600
+  px-8;
+}
+.dropdown-units__switch {
+  @apply text-16 text-white px-8 min-h-9.75 w-full inline-flex justify-start bg-transparent cursor-pointer
+  hover:bg-neutral-700;
+}
+.dropdown-units__label {
+  @apply text-14 text-neutral-300 leading-120;
+}
+.dropdown-units__radio-item {
+  @apply text-white text-16 px-8 py-10 cursor-pointer
+  hover:bg-neutral-700;
+}
