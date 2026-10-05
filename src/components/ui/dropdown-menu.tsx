@@ -2,6 +2,7 @@ import * as React from "react";
 import { Menu as MenuPrimitive } from "@base-ui/react/menu";
 import { cn } from "cn";
 import { ChevronRightIcon } from "lucide-react";
+import checkmarkIcon from "/images/icon-checkmark.svg";
 
 function DropdownMenu({ ...props }: MenuPrimitive.Root.Props) {
   return <MenuPrimitive.Root data-slot="dropdown-menu" {...props} />;
@@ -173,7 +174,7 @@ function DropdownMenuCheckboxItem({
         data-slot="dropdown-menu-checkbox-item-indicator"
       >
         <MenuPrimitive.CheckboxItemIndicator>
-          <img src="/images/icon-checkmark.svg" alt="" />
+          <img src={checkmarkIcon} alt="" />
         </MenuPrimitive.CheckboxItemIndicator>
       </span>
       {children}
