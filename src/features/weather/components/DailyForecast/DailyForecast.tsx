@@ -1,5 +1,6 @@
 import WeatherIcon from "../../../../shared/components/WeatherIcon/WeatherIcon";
 import type { Units } from "../../../settings/types/units.types";
+import { UNIT_SYMBOLS } from "../../../settings/utils/unitSymbols";
 import type { Weather } from "../../types/weather.types";
 import { formatWeatherDailyForecast } from "../../utils/formatWeather";
 import "./DailyForecast.css";
@@ -33,11 +34,13 @@ const DailyForcast = ({ weather, units }: DailyForcastProps) => {
 
                 <div className="daily-forecast__temperatures">
                   <span className="daily-forecast__high">
-                    {forecast.tempMax}°
+                    {forecast.tempMax}
+                    {UNIT_SYMBOLS.temperature[units.temperature]}
                   </span>
 
                   <span className="daily-forecast__low">
-                    {forecast.tempMin}°
+                    {forecast.tempMin}
+                    {UNIT_SYMBOLS.temperature[units.temperature]}
                   </span>
                 </div>
               </article>
