@@ -48,29 +48,38 @@ export const formatWeatherDailyForecast = (dailyData: DailyForecast) => {
 };
 
 export const transformHourlyData = (hourly: HourlyForecast) => {
-  return hourly.time.reduce((acc, isoTime, index) => {
-    const date = new Date(isoTime);
+  type HourlyDataPoint = {
+    time: string;
+    temp: number;
+    weathercode: number;
+  };
 
-    // Extract weekday name (e.g., "Tuesday", "Friday")
-    const dayName = date.toLocaleDateString("en-US", { weekday: "long" });
+  return hourly.time.reduce<Record<string, HourlyDataPoint[]>>(
+    (acc, isoTime, index) => {
+      const date = new Date(isoTime);
 
-    // Format hour into "3 PM", "4 PM", "12 AM", etc.
-    const hourFormatted = date.toLocaleTimeString("en-US", {
-      hour: "numeric",
-      hour12: true,
-    });
+      // Extract weekday name (e.g., "Tuesday", "Friday")
+      const dayName = date.toLocaleDateString("en-US", { weekday: "long" });
 
-    const item = {
-      time: hourFormatted,
-      temp: Math.round(hourly.temperature_2m[index]),
-      weathercode: hourly.weathercode[index],
-    };
+      // Format hour into "3 PM", "4 PM", "12 AM", etc.
+      const hourFormatted = date.toLocaleTimeString("en-US", {
+        hour: "numeric",
+        hour12: true,
+      });
 
-    if (!acc[dayName]) {
-      acc[dayName] = [];
-    }
+      const item: HourlyDataPoint = {
+        time: hourFormatted,
+        temp: Math.round(hourly.temperature_2m[index]),
+        weathercode: hourly.weathercode[index],
+      };
 
-    acc[dayName].push(item);
-    return acc;
-  }, {});
+      if (!acc[dayName]) {
+        acc[dayName] = [];
+      }
+
+      acc[dayName].push(item);
+      return acc;
+    },
+    {},
+  );
 };

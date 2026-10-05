@@ -79,7 +79,7 @@ const SearchForm = ({ onLocationSelect }: SearchFormProps) => {
           {isLoading && !isError && (
             <p className="weather-search__loading">
               <img
-                src="/images/icon-loading.svg"
+                src="images/icon-loading.svg"
                 alt=""
                 className="animate-spin"
               />{" "}
