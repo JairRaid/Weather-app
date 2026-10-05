@@ -9,6 +9,7 @@ import { useLocationSearch } from "../../hooks/useLocationSearch";
 import LocationSuggestions from "../LocationSuggestions/LocationSuggestions";
 import type { Location } from "../../types/location.types";
 import { useState } from "react";
+import searchIcon from "/images/icon-search.svg";
 
 interface SearchFormProps {
   onLocationSelect: (location: Location) => void;
@@ -63,7 +64,7 @@ const SearchForm = ({ onLocationSelect }: SearchFormProps) => {
           <label htmlFor="weather-city" className="sr-only">
             Search for a city
           </label>
-          <img src="/images/icon-search.svg" alt="" />
+          <img src={searchIcon} alt="" />
 
           <input
             id="weather-city"
