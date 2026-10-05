@@ -1,4 +1,4 @@
-import { useState } from "react";
+import type { Dispatch, SetStateAction } from "react";
 import {
   Select,
   SelectContent,
@@ -22,8 +22,8 @@ type Day =
 
 interface DaySelectorProps {
   houlyForecast: HourlyForecast;
-  onSelectDay: React.Dispatch<React.SetStateAction<Day | null>>;
-  selectedDay: string | null;
+  onSelectDay: Dispatch<SetStateAction<Day | null>>;
+  selectedDay: Day | null;
 }
 
 const DaySelector = ({
@@ -37,11 +37,15 @@ const DaySelector = ({
     value: item,
   }));
 
+  const handleSelectDay = (value: string | null) => {
+    onSelectDay(value as Day | null);
+  };
+
   return (
     <Select
       items={forecastDays}
       value={selectedDay}
-      onValueChange={onSelectDay}
+      onValueChange={handleSelectDay}
     >
       <SelectTrigger className="day-selector__trigger">
         <SelectValue />

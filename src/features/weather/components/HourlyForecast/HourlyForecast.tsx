@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type Dispatch, type SetStateAction } from "react";
 import WeatherIcon from "../../../../shared/components/WeatherIcon/WeatherIcon";
 import type { Units } from "../../../settings/types/units.types";
 import type { Weather } from "../../types/weather.types";
@@ -13,7 +13,7 @@ type HourlyWeather = {
   weathercode: number;
 };
 
-type Day =
+export type Day =
   | "Monday"
   | "Tuesday"
   | "Wednesday"
