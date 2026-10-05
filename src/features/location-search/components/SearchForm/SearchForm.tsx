@@ -54,7 +54,11 @@ const SearchForm = ({ onLocationSelect }: SearchFormProps) => {
         How's the sky looking today?
       </h1>
 
-      <form className="weather-search__form" role="search">
+      <form
+        className="weather-search__form"
+        role="search"
+        onSubmit={(e) => e.preventDefault()}
+      >
         <div className="weather-search__field">
           <label htmlFor="weather-city" className="sr-only">
             Search for a city
