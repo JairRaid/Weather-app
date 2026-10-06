@@ -29,6 +29,8 @@ const SearchForm = ({ onLocationSelect }: SearchFormProps) => {
     name: "search",
   });
 
+  console.log(search);
+
   const {
     data: locations = [],
     isPending,
@@ -101,7 +103,7 @@ const SearchForm = ({ onLocationSelect }: SearchFormProps) => {
         </button>
       </form>
 
-      {isSuccess && !locations.length && (
+      {isSuccess && !locations.length && search.length !== 0 && (
         <p className="weather-app__no-results">No search result found!</p>
       )}
     </section>
