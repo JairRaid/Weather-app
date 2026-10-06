@@ -36,8 +36,8 @@ Your users should be able to:
 
 ### Links
 
-- Solution URL:
-- Live Site URL:
+- Solution URL: https://github.com/JairRaid/Weather-app
+- Live Site URL: https://jairraid.github.io/Weather-app/
 
 ## My process
 
